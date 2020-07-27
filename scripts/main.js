@@ -1,5 +1,7 @@
 function solve() {
 
+    event.preventDefault();
+    // Get elements from the DOM and form submit
     let form = document.getElementById("form");
 
     let xone = document.getElementById("xone");
@@ -13,59 +15,68 @@ function solve() {
     let c = form.elements[2].value;
 
     console.log("Round = " + round);
-
     console.log(a, b, c);
 
-    let ac = 4 * a * c;
-
-    console.log("4ac = " + ac);
-
-    let bsqrd = Math.pow(b, 2);
-
-    console.log("b^2 = " + bsqrd);
-
-    let diff = bsqrd - ac;
-
-    console.log("Diff = " + diff);
-
-    let sqrt = Math.sqrt(diff);
-
-    console.log("Sqrt = " + sqrt);
-
+    // Get some variables used in the equation
     let negb = -1 * b;
-
+    let dbla = 2 * a;
+    let ac = 4 * a * c;
+    let bsqrd = Math.pow(b, 2);
+    let diff = bsqrd - ac;
+    console.log("b^2 = " + bsqrd);
+    console.log("4ac = " + ac);
+    console.log("Diff = " + diff);
     console.log("-b = " + negb);
-
-    let d1 = negb + sqrt;
-    console.log("d1 = " + d1);
-    let d2 = negb - sqrt;
-    console.log("d2 = " + d2);
-
-    let dbla = a * 2;
     console.log("2a = " + dbla);
+    let x1;
+    let x2;
 
-    let x1 = d1 / dbla;
-    let x2 = d2 / dbla;
+    // Negative determinant
+    if (diff < 0) {
+
+        console.log("Complex");
+
+        // Operate with absolute values
+        let absdiff = Math.abs(diff);
+        let abssqrt = Math.sqrt(absdiff);
+        console.log("Absdiff = " + absdiff);
+        console.log("Abssqrt = " + abssqrt);
+        
+        let real = negb / dbla;
+        let img = abssqrt / dbla;
+
+        if (round) {
+            real = Math.round((real + Number.EPSILON) * 100) / 100;
+            img = Math.round((img + Number.EPSILON) * 100) / 100;
+        }
+
+        // Concatenate the results
+        x1 = `${real} + ${img} I`;
+        x2 = `${real} - ${img} I`;
+
+    } else {
+
+        // Operate normally
+        let sqrt = Math.sqrt(diff);
+        let d1 = negb + sqrt;
+        let d2 = negb - sqrt;
+        console.log("Sqrt = " + sqrt);
+        console.log("d1 = " + d1);
+        console.log("d2 = " + d2);
+
+        x1 = d1 / dbla;
+        x2 = d2 / dbla;
+
+        if (round) {
+            x1 = Math.round((x1 + Number.EPSILON) * 100) / 100;
+            x2 = Math.round((x2 + Number.EPSILON) * 100) / 100;
+        }
+    }
 
     console.log("x1, x2 = " + x1 + x2);
 
-    if (round) {
-        x1 = Math.round(x1);
-        x2 = Math.round(x2);
-    }
-
-    event.preventDefault();
-
-    if (isNaN(x1)) {
-        xone.innerHTML = "Imaginary";
-    } else {
-        xone.innerHTML = "X1 = " + x1;
-    }
+    xone.innerHTML = "X1 = " + x1;
     
-    if(isNaN(x2)) {
-        xtwo.innerHTML = "Imaginary";
-    } else {
-        xtwo.innerHTML = "X2 = " + x2;
-    }
+    xtwo.innerHTML = "X2 = " + x2;
 
 }

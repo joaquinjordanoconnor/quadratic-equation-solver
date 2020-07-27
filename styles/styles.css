@@ -31,7 +31,7 @@ body {
 @media only screen and (max-width: 600px) {
 
     input[type="number"] {
-        width: 5em;
+        width: 10em;
      }
 
      #title {
