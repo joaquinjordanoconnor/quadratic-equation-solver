@@ -51,8 +51,8 @@ function solve() {
         }
 
         // Concatenate the results
-        x1 = `${real} + ${img} I`;
-        x2 = `${real} - ${img} I`;
+        x1 = `${real} + ${img}¡`;
+        x2 = `${real} - ${img}¡`;
 
     } else {
 
