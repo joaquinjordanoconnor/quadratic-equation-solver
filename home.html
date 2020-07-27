@@ -2,7 +2,7 @@
     <head>
         <title>Quadratic equation solver</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
         <!-- Primary Meta Tags -->
@@ -36,21 +36,26 @@
 
             <div class="form-group">
                 <label for="a">a:</label>
-                <input type="number" name="a" id="a"> 
+                <input type="number" name="a" id="a" required> 
             </div>
             
             <div class="form-group">
                 <label for="b">b:</label>
-                <input type="number" name="b" id="b">
+                <input type="number" name="b" id="b" required>
             </div>
             
             <div class="form-group">
                 <label for="c">c:</label>
-                <input type="number" name="c" id="c">
+                <input type="number" name="c" id="c" required>
             </div>
 
             <div class="form-group">
                 <button type="submit" class="btn btn-lg btn-light">Solve!</button>
+            </div>
+
+            <div class="form-group">
+                <label for="round">Round?</label>
+                <input type="checkbox" name="round" id="round">
             </div>
             
         </form>
@@ -58,7 +63,7 @@
         <h2 id="xone">Don't forget!</h2>
         <h2 id="xtwo">ax² + bx + c = 0</h2>
 
-        <script src="app.js"></script>
+        <script src="scripts/main.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

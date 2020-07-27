@@ -38,6 +38,10 @@ body {
         font-size: 4em;
     }
 
+    #xone, #xtwo {
+        font-size: 1.2em;
+    }
+
     .form-group {
         margin: 3%;
         font-size: 1.5em;
