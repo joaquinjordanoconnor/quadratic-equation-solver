@@ -1,3 +1,4 @@
 # quadratic-equation-solver
 Online quadratic calculator to quickly solve equations.
-Added support for complex roots and up to 10 decimal places!
+Visit: [Quadratic Solver at Netlify](https://quadraticsolver.netlify.app/)
+Made by Joaquín Jordán O'Connor
